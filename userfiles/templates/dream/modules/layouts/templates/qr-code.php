@@ -21,7 +21,7 @@ $qrcode_settings = $qrcode_settings ? $qrcode_settings : $database;
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 <style type="text/css">
-.grid-stack-item-content {color: #2c3e50;text-align: center;background-color: #18bc9c;}
+.grid-stack-item-content {color: #2c3e50;text-align: center;/* background-color: #18bc9c; */}
 .qricon-wrapper>img{border: 1px #5fabf3 solid;}
 .qrcard-block>p{font-size: 15px;color: #000;}
 .qrcard-block{margin-top: 10px;}
@@ -29,14 +29,14 @@ $qrcode_settings = $qrcode_settings ? $qrcode_settings : $database;
 </style>
 <div class="layout-qrcode-<?php print $params['id'] ?>">
     <ul class="qrcards-layout-1 grid-stack">
-
-        <?php 
+        <?php
         if(!empty($qrcode_settings)){
             $qrarr = json_decode($qrcode_settings,true);
-            foreach ($qrarr as $key => $value) { 
+            $i = -2;
+            foreach ($qrarr as $key => $value) {
         ?>
 
-            <li class="qrcard grid-stack-item" grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="1">
+            <li class="qrcard grid-stack-item" data-gs-no-resize="true" data-gs-x="<?php echo $i +=2; ?>" data-gs-y="0" data-gs-width="2" data-gs-height="1">
                 <div class="grid-stack-item-content">
                     <div class="qricon-wrapper">
                         <img src="<?php echo $value['logo']; ?>">
@@ -59,8 +59,8 @@ $qrcode_settings = $qrcode_settings ? $qrcode_settings : $database;
 <script type="text/javascript">
 $(function () {
     var options = {
-        cell_height: 260,
-        vertical_margin: 10
+        cell_height: 260
+        animate: true
     };
     $('.grid-stack').gridstack(options);
 });
