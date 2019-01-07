@@ -1,14 +1,4 @@
 <?php
-/*
-
-type: layout
-
-name: QR code
-
-position: 3
-*/
-?>
-<?php
 
 $database = '[{"link":"http://www.zhongyajituan.cn/","name":"中亚集团","logo":"http://172.16.5.17:8553/userfiles/cache/thumbnails/qrcode/154546149445184.png","length":"6"},{"link":"http://www.baidu.com","name":"百度","logo":"http://172.16.5.17:8553/userfiles/cache/thumbnails/qrcode/15454614185205.png","length":"6"}]';
 $qrcode_settings = get_option('qrcode_settings', $params['id']);
