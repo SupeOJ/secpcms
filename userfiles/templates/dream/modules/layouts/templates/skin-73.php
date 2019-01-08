@@ -1,106 +1,71 @@
 <?php
-
 /*
 
 type: layout
 
-name: Cover Media With Video
+name: QR code
 
-position: 1
-
+position: 3
 */
-
 ?>
-
-<?php include 'settings_padding_front.php'; ?>
-<?php include 'settings_is_parallax_front.php'; ?>
-<?php include 'settings_is_color_front.php'; ?>
 <?php
-/* Overlay */
-$overlay = get_option('overlay', $params['id']);
-if ($overlay === null OR $overlay === false) {
-    $overlay = '6';
-}
+
+$database = '[{"link":"http://www.zhongyajituan.cn/","name":"中亚集团","logo":"http://172.16.5.17:8553/userfiles/cache/thumbnails/qrcode/154546149445184.png","length":"6"},{"link":"http://www.baidu.com","name":"百度","logo":"http://172.16.5.17:8553/userfiles/cache/thumbnails/qrcode/15454614185205.png","length":"6"}]';
+$qrcode_settings = get_option('qrcode_settings', $params['id']);
+$qrcode_settings = $qrcode_settings ? $qrcode_settings : $database;
 ?>
-<script>
-    mw.lib.require('fitty');
-</script>
-<script>
 
-    $(document).ready(function () {
-        var el = document.getElementById('fitty-<?php print $params['id'] ?>');
-        $('#fitty-<?php print $params['id'] ?>').removeAttr('style');
-        if (el) {
-            fitty(el);
-        }
-    });
+<!-- 拖拽 -->
+<link href="{TEMPLATE_URL}drag/dist/gridstack.css" rel="stylesheet" />
+<link href="{TEMPLATE_URL}drag/css/default.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+.grid-stack-item {width: 260px;float: left;}
+.grid-stack-item-content {color: #2c3e50;text-align: center;}
+.qricon-wrapper>img{border: 1px #5fabf3 solid;}
+.qrcard-block>p{font-size: 15px;color: #000;}
+.qrcard-block{margin-top: 10px;}
+.qrcards-layout-1>li{list-style: none;}
+.layout-qrcode{padding: 30px 0px 20px 0px;}
 
-    $(document).ready(function () {
-        var $window = $(window);
-        var windowWidth = $window.width();
-        var windowHeight = $window.height();
-        var navHeight = $('nav').outerHeight(true);
+</style>
+<div class="layout-qrcode layout-qrcode-<?php print $params['id'] ?>">
+    <ul class="qrcards-layout-1 grid-stack">
+        <?php
+        if(!empty($qrcode_settings)){
+            $qrarr = json_decode($qrcode_settings,true);
+            $i = -2;
+            foreach ($qrarr as $key => $value) {
+        ?>
 
-        // Disable parallax on mobile
-
-        if ((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-            $('section').removeClass('parallax');
-        }
-
-        if (windowWidth > 768) {
-            var parallaxHero = $('.parallax:nth-of-type(1)'),
-                parallaxHeroImage = $('.parallax:nth-of-type(1) .background-image-holder');
-
-            parallaxHeroImage.css('top', -(navHeight));
-            if (parallaxHero.outerHeight(true) == windowHeight) {
-                parallaxHeroImage.css('height', windowHeight + navHeight);
-            }
-        }
-    });
-</script>
-
-
-<section class="height-100 imagebg videobg cover cover-1 <?php if ($is_parallax == 'yes'): ?>parallax<?php endif; ?> nodrop edit safe-mode <?php print $padding ?>" data-overlay="<?php print $overlay; ?>"
-         field="layout-skin-73-<?php print $params['id'] ?>"
-         rel="module">
-
-        <module type="video_small" class="video-background-holder" id="video-small-<?php print $params['id'] ?>"/>
-
-
-    <div class="container pos-vertical-center">
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3 text-center">
-                <div class="allow-drop">
-                    <p class="logo-text"><span id="fitty-<?php print $params['id'] ?>" class="safe-element"><?php _lang("Dream", "templates/dream"); ?>.</span></p>
-                </div>
-            </div>
-            <div class="col-xs-12 text-center">
-                <div class="allow-drop">
-                    <p class="lead" style="top: 0;">
-                        <?php print _lang('A beautiful collection of hand-crafted web components', 'templates/dream'); ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <div class="modal-instance modal-video-1">
-                    <!--                    <div class="edit allow-drop" field="layout-skin-1-btn---><?php //print $params['id'] ?><!--" rel="module">-->
-                    <div class="element">
-                        <module type="btn" text="<?php _lang("Watch video", "templates/dream"); ?>"/>
+            <li class="qrcard grid-stack-item" data-gs-auto-position="true" data-gs-height="1" data-gs-no-resize="true" data-gs-locked="true" data-gs-width="2" data-gs-height="1">
+                <div class="grid-stack-item-content">
+                    <div class="qricon-wrapper">
+                        <img src="<?php echo $value['logo']; ?>">
                     </div>
-                    <!--                    </div>-->
+                    <div class="qrcard-block">
+                        <p class="card-text"><?php echo $value['name']; ?></p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </li>
 
-    <div class="col-sm-12 pos-absolute pos-bottom">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <module type="social_links" id="socials"/>
-            </div>
-        </div>
-    </div>
-</section>
+        <?php 
+            } 
+        } 
+        ?>
+    </ul>
+</div>
+
+<script src="{TEMPLATE_URL}drag/js/lodash.min.js"></script>
+<script src="{TEMPLATE_URL}drag/dist/gridstack.js"></script>
+<script type="text/javascript">
+$(function () {
+    var options = {
+        cell_height: 260,
+        animate: true,
+        height: 1
+    };
+    $('.grid-stack').gridstack(options);
+});
+</script>
