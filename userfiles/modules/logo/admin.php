@@ -484,7 +484,7 @@ if ($size == false or $size == '') {
         mw.$("#google-fonts option").each(function () {
             var val = $(this).attr('value');
             if (val != '') {
-                mw.require('//fonts.googleapis.com/css?family=' + val + '&filetype=.css', true);
+                //mw.require('//fonts.googleapis.com/css?family=' + val + '&filetype=.css', true);
                 $(this).css('fontFamily', $(this).text());
             }
         });

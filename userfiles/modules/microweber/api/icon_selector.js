@@ -432,7 +432,7 @@ mw.iconSelector = mw.iconSelector || {
         }
     },
     getMaterialIconsDropdown:function(callback){
-      mw.require('https://fonts.googleapis.com/icon?family=Material+Icons&.css')
+      //mw.require('https://fonts.googleapis.com/icon?family=Material+Icons&.css')
       var html = '';
       if(!mw.materialIcons){
           $.getScript(mw.settings.modules_url + 'microweber/api/material.icons.js', function(data){

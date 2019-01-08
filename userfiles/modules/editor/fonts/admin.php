@@ -71,13 +71,13 @@ mw_fonts_preview_load_stylesheet = function(family){
          if(mw_fonts_preview_loaded_stylesheets.indexOf(family) === -1){
              mw_fonts_preview_loaded_stylesheets.push(family);
 			 	
-			   var filename = "//fonts.googleapis.com/css?family="+ encodeURIComponent(family)+"&text="+ encodeURIComponent(family);
+			   //var filename = "//fonts.googleapis.com/css?family="+ encodeURIComponent(family)+"&text="+ encodeURIComponent(family);
 			    
 
 			   var fileref=document.createElement("link")
 				fileref.setAttribute("rel", "stylesheet")
 				fileref.setAttribute("type", "text/css")
-				fileref.setAttribute("href", filename)
+				//fileref.setAttribute("href", filename)
 				document.getElementsByTagName("head")[0].appendChild(fileref)
 
 					 

@@ -12,7 +12,7 @@
 
 </script>
 
-<script>mw.require('https://fonts.googleapis.com/icon?family=Material+Icons&.css', 'material_icons');</script>
+<!-- <script>mw.require('https://fonts.googleapis.com/icon?family=Material+Icons&.css', 'material_icons');</script> -->
 <script>mw.moduleCSS("<?php print modules_url(); ?>shop/cart_add/styles.css"); </script>
 
 <?php

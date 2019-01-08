@@ -51,7 +51,7 @@ if ($template != false and strtolower($template) != 'none') {
         mw.require("shop.js");
     </script>
 
-    <script>mw.require('https://fonts.googleapis.com/icon?family=Material+Icons&.css', 'material_icons');</script>
+    <!-- <script>mw.require('https://fonts.googleapis.com/icon?family=Material+Icons&.css', 'material_icons');</script> -->
     <script>mw.moduleCSS("<?php print modules_url(); ?>shop/checkout/styles.css"); </script>
 
     <script type="text/javascript">

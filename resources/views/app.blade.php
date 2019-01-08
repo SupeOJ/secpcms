@@ -16,7 +16,7 @@
 	<link href="/css/vendor/font-awesome.css" rel="stylesheet">
 
 	<!-- Web Fonts -->
-	<!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'> -->
+<!-- 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'> -->
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>

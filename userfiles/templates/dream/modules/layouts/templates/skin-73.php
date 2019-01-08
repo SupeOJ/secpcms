@@ -35,10 +35,8 @@ $qrcode_settings = $qrcode_settings ? $qrcode_settings : $database;
         <?php
         if(!empty($qrcode_settings)){
             $qrarr = json_decode($qrcode_settings,true);
-            $i = -2;
             foreach ($qrarr as $key => $value) {
         ?>
-
             <li class="qrcard grid-stack-item" data-gs-auto-position="true" data-gs-height="1" data-gs-no-resize="true" data-gs-locked="true" data-gs-width="2" data-gs-height="1">
                 <div class="grid-stack-item-content">
                     <div class="qricon-wrapper">

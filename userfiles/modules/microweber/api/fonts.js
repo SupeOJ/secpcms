@@ -16,9 +16,9 @@ mw.fonts = {
     },
     google:{
         create:function(){
-            var root = 'https://fonts.googleapis.com/css?';
+            //var root = 'https://fonts.googleapis.com/css?';
             var el = mw.fonts._create();
-            el._rooturl = root;
+            //el._rooturl = root;
             el._config = {};
 
             return el;
@@ -54,7 +54,7 @@ mw.fonts = {
                 url += '&amp;subset=' + options.subset.join(',')
             }
             el._config = options;
-            el.href = el._rooturl + url;
+            //el.href = el._rooturl + url;
         },
         config:function(options, el, mode){
 

@@ -75,9 +75,9 @@
     </script>
 
 
-    <link href='//fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300&subset=latin,cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300italic&subset=latin,cyrillic,greek,latin-ext' rel='stylesheet' type='text/css'>
+<!--     <link href='//fonts.useso.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.useso.com/css?family=Roboto+Slab:400,300&subset=latin,cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet' type='text/css'>
+<link href='//fonts.useso.com/css?family=Open+Sans:400,300italic&subset=latin,cyrillic,greek,latin-ext' rel='stylesheet' type='text/css'> -->
     <script>
 
         mw.require("<?php print TEMPLATE_URL;  ?>template_settings.css");
