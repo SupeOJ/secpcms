@@ -15,11 +15,7 @@ $qrcode_settings = get_option('qrcode_settings', $params['id']);
 $qrcode_settings = $qrcode_settings ? $qrcode_settings : $database;
 ?>
 
-<!-- 拖拽 -->
-<link href="{TEMPLATE_URL}drag/dist/gridstack.css" rel="stylesheet" />
-<link href="{TEMPLATE_URL}drag/css/default.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
 <style type="text/css">
 .grid-stack-item {width: 260px;float: left;}
 .grid-stack-item-content {color: #2c3e50;text-align: center;}
@@ -54,9 +50,6 @@ $qrcode_settings = $qrcode_settings ? $qrcode_settings : $database;
         ?>
     </ul>
 </div>
-
-<script src="{TEMPLATE_URL}drag/js/lodash.min.js"></script>
-<script src="{TEMPLATE_URL}drag/dist/gridstack.js"></script>
 <script type="text/javascript">
 $(function () {
     var options = {

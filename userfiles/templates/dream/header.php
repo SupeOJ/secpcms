@@ -70,6 +70,13 @@
     <link href="{TEMPLATE_URL}assets/css/mw-dream.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700%7CMontserrat:400,700' rel='stylesheet' type='text/css'> -->
 
+    <!-- 拖拽 -->
+    <link href="{TEMPLATE_URL}assets/drag/dist/gridstack.css" rel="stylesheet" />
+    <link href="{TEMPLATE_URL}assets/drag/css/default.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="{TEMPLATE_URL}assets/drag/js/lodash.min.js"></script>
+    <script src="{TEMPLATE_URL}assets/drag/dist/gridstack.js"></script>
+
     <?php if ($stop_transparent_nav != 'true'): ?>
         <script>
             checkFirstSectionForNav = function () {
