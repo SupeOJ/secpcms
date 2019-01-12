@@ -63,6 +63,19 @@ $is_live =  mw()->user_manager->session_get('editmode') == true;
 <script src="{TEMPLATE_URL}assets/js/scrollreveal.min.js"></script>
 <script src="{TEMPLATE_URL}assets/js/parallax.js"></script>
 <script src="{TEMPLATE_URL}assets/js/scripts.js"></script>
+<!-- 拖拽 -->
+<script src="{TEMPLATE_URL}assets/drag/js/lodash.min.js"></script>
+<script src="{TEMPLATE_URL}assets/drag/dist/gridstack.js"></script>
+<script>
+    $(function () {
+    var options = {
+        cell_height: 260,
+        animate: true,
+        height: 1
+    };
+    $('.grid-stack').gridstack(options);
+});
+</script>
 
 </body>
 </html>

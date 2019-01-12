@@ -71,12 +71,20 @@
     <!-- <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700%7CMontserrat:400,700' rel='stylesheet' type='text/css'> -->
 
     <!-- 拖拽 -->
-    <link href="{TEMPLATE_URL}assets/drag/dist/gridstack.css" rel="stylesheet" />
+    <link href="{TEMPLATE_URL}assets/drag/dist/gridstack.css" rel="stylesheet"/>
     <link href="{TEMPLATE_URL}assets/drag/css/default.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <script src="{TEMPLATE_URL}assets/drag/js/lodash.min.js"></script>
-    <script src="{TEMPLATE_URL}assets/drag/dist/gridstack.js"></script>
-
+    <style>
+        
+        .grid-stack-item {width: 260px;float: left;}
+        .grid-stack-item-content {color: #2c3e50;text-align: center;}
+        .qricon-wrapper>img{border: 1px #5fabf3 solid;}
+        .qrcard-block>p{font-size: 15px;color: #000;}
+        .qrcard-block{margin-top: 10px;}
+        .qrcards-layout-1>li{list-style: none;}
+        .layout-qrcode{padding: 30px 0px 20px 0px;}
+    </style>
+   
     <?php if ($stop_transparent_nav != 'true'): ?>
         <script>
             checkFirstSectionForNav = function () {
